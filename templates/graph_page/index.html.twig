@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+    {% include('navbar.html.twig')%}
+    <main class="main-wrapper">
+        <div class="graph-wrapper">
+            {{ render_chart(chart) }}
+        </div>
+    </main>
+{% endblock %}

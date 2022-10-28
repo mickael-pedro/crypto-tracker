@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block javascripts %}
+    <script src="/assets/js/coinform.js"></script>
+{% endblock %}
+
+{% block body %}
+
+{% include('navbar.html.twig')%}
+
+<main class="main-wrapper">
+    <div class="form-wrapper">
+        {{ form_start(coin_form) }}
+            <div class="input-container">
+                {{ form_widget(coin_form.coinname, { 'attr': {'class': 'input'} }) }}
+                {{ form_widget(coin_form.quantity, { 'attr': {'class': 'input', 'placeholder': 'Quantité', 'onkeypress': 'return isNumberKey(event)'} }) }}
+
+                <div class="button-wrapper">
+                    {{ form_widget(coin_form.save, { 'label': 'Valider', 'attr': {'class': 'button-submit'} }) }}
+                </div>
+            </div>
+        {{ form_end(coin_form) }}
+    </div>
+</main>
+
+{% endblock %}

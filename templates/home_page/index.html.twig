@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crypto Tracker{% endblock %}
+
+{% block body %}
+
+{% include('home-navbar.html.twig')%}
+
+<main class="main-wrapper">
+    <div class="balance"><a href="graph">{{ balance|number_format(2, ',', ' ') }} €</a></div>
+    <div class="coin-wrapper">
+        <div><i class="coin-svg btc-svg"></i>BTC <span class="coin-name">(Bitcoin)</span></div>
+        <div id="btc-trend"><i class="fa-solid fa-arrow-trend-{{(changeLast24h['btc'] < 0) ? 'down' : 'up'}}"></i></div>
+    </div>
+    <div class="coin-wrapper">
+        <div><i class="coin-svg eth-svg"></i>ETH <span class="coin-name">(Ethereum)</span></div>
+        <div id="eth-trend"><i class="fa-solid fa-arrow-trend-{{(changeLast24h['eth'] < 0) ? 'down' : 'up'}}"></i></div>
+    </div>
+    <div class="coin-wrapper">
+        <div><i class="coin-svg xrp-svg"></i>XRP <span class="coin-name">(Ripple)</span></div>
+        <div id="xrp-trend"><i class="fa-solid fa-arrow-trend-{{(changeLast24h['xrp'] < 0) ? 'down' : 'up'}}"></i></div>
+    </div>
+</main>
+{% endblock %}
