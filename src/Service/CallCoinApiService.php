@@ -25,7 +25,7 @@ class CallCoinApiService
                 ],
                 'headers' => [
                     'Accepts: application/json',
-                    'X-CMC_PRO_API_KEY: 200cc19e-c73a-451e-bf44-ae744e33067b'
+                    'X-CMC_PRO_API_KEY: ' . $_ENV['API_KEY'],
                 ]
             ]
         );
